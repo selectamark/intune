@@ -7,6 +7,6 @@ $stt = New-ScheduledTaskTrigger -AtLogOn
 $sta = New-ScheduledTaskAction -Execute "conhost.exe --headless powershell.exe -ExecutionPolicy Bypass $templateFilePath"
 $stp = New-ScheduledTaskPrincipal -GroupId "BUILTIN\Administrators" -RunLevel Highest
 
-Register-ScheduledTask SM_Task01 -Trigger $stp -Action $sta -Principal $stp -Force
+Register-ScheduledTask SM_Task01 -Trigger $stt -Action $sta -Principal $stp -Force
 
 winget uninstall "Xbox Game Bar"
