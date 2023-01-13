@@ -151,7 +151,7 @@ Start-Transcript -Path "C:\ProgramData\Debloat\Debloat.log"
         "*Sway*"
         "*Speed Test*"
         "*Dolby*"
-        #"*Office*"
+        "*Office*"
         "*Disney*"
         "clipchamp.clipchamp"
              
