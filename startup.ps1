@@ -9,4 +9,11 @@ $stp = New-ScheduledTaskPrincipal -GroupId "BUILTIN\Administrators" -RunLevel Hi
 
 Register-ScheduledTask SM_Task01 -Trigger $stt -Action $sta -Principal $stp -Force
 
+Invoke-WebRequest `
+-Uri "https://raw.githubusercontent.com/selectamark/intune/main/startup.ps1" `
+-OutFile $templateFilePath `
+-UseBasicParsing `
+-Headers @{"Cache-Control"="no-cache"}
+
 winget uninstall "Xbox Game Bar"
+winget upgrade --all --silent
