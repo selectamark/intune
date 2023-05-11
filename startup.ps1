@@ -15,6 +15,14 @@ $stp = New-ScheduledTaskPrincipal -GroupId "BUILTIN\Administrators" -RunLevel Hi
 
 Register-ScheduledTask SM_LoginTask -Trigger $stt -Action $sta -Principal $stp -Force
 
+for(;;) {
+  if(Get-Command winget -ErrorAction SilentlyContinue) {
+    break
+  } else {
+    sleep 15
+  }
+}
+
 
 winget uninstall "Xbox Game Bar"
 winget uninstall "9N0866FS04W8"
