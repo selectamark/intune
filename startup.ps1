@@ -23,21 +23,18 @@ for(;;) {
   }
 }
 
+winget ls --accept-source-agreements
 
-$di = "--disable-interactivity"
-$hdi = "-h $di"
-$hdiaa = "$hdi --accept-source-agreements --accept-package-agreements"
+winget source update --disable-interactivity
 
-winget source update $di
+winget rm -h "Xbox Game Bar" --disable-interactivity 
+winget rm -h "9N0866FS04W8" --disable-interactivity
+winget rm -h "MirametrixInc.GlancebyMirametrix_17mer8kcn3j54" --disable-interactivity 
+winget rm -h "Microsoft Clipchamp" --disable-interactivity 
+winget rm -h "Microsoft.PowerAutomateDesktop_8wekyb3d8bbwe" --disable-interactivity 
 
-winget uninstall "Xbox Game Bar" $hdi
-winget uninstall "9N0866FS04W8" $hdi
-winget uninstall "MirametrixInc.GlancebyMirametrix_17mer8kcn3j54" $hdi
-winget uninstall "Microsoft Clipchamp" $hdi
-winget uninstall "Microsoft.PowerAutomateDesktop_8wekyb3d8bbwe" $hdi
+winget add -h OpenVPNTechnologies.OpenVPNConnect --disable-interactivity --accept-package-agreements
+winget add -h 7zip.7zip --disable-interactivity --accept-package-agreements
+winget add -h Adobe.Acrobat.Reader.64-bit --disable-interactivity --accept-package-agreements
 
-winget install OpenVPNTechnologies.OpenVPNConnect $hdiaa
-winget install 7zip.7zip $hdiaa
-winget install Adobe.Acrobat.Reader.64-bit $hdiaa
-
-winget upgrade --all $hdiaa
+winget upgrade -h --all --disable-interactivity
