@@ -23,7 +23,7 @@ for(;;) {
   }
 }
 
-winget ls --accept-source-agreements
+winget ls --disable-interactivity --accept-source-agreements
 
 winget source update --disable-interactivity
 
