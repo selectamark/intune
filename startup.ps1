@@ -29,6 +29,7 @@ winget source update --disable-interactivity
 
 winget rm -h "Xbox Game Bar" --disable-interactivity 
 winget rm -h "9N0866FS04W8" --disable-interactivity
+winget rm -h "Clean Your Device" --disable-interactivity 
 winget rm -h "MirametrixInc.GlancebyMirametrix_17mer8kcn3j54" --disable-interactivity 
 winget rm -h "Microsoft Clipchamp" --disable-interactivity 
 winget rm -h "Microsoft.PowerAutomateDesktop_8wekyb3d8bbwe" --disable-interactivity 
