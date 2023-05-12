@@ -24,14 +24,20 @@ for(;;) {
 }
 
 
-winget uninstall "Xbox Game Bar"
-winget uninstall "9N0866FS04W8"
-winget uninstall "MirametrixInc.GlancebyMirametrix_17mer8kcn3j54"
-winget uninstall "Microsoft Clipchamp"
-winget uninstall "Microsoft.PowerAutomateDesktop_8wekyb3d8bbwe"
+$di = "--disable-interactivity"
+$hdi = "-h $di"
+$hdiaa = "$hdi --accept-source-agreements --accept-package-agreements"
 
-winget install OpenVPNTechnologies.OpenVPNConnect --silent
-winget install 7zip.7zip --silent
-winget install Adobe.Acrobat.Reader.64-bit --silent
+winget source update $di
 
-winget upgrade --all --silent
+winget uninstall "Xbox Game Bar" $hdi
+winget uninstall "9N0866FS04W8" $hdi
+winget uninstall "MirametrixInc.GlancebyMirametrix_17mer8kcn3j54" $hdi
+winget uninstall "Microsoft Clipchamp" $hdi
+winget uninstall "Microsoft.PowerAutomateDesktop_8wekyb3d8bbwe" $hdi
+
+winget install OpenVPNTechnologies.OpenVPNConnect $hdiaa
+winget install 7zip.7zip $hdiaa
+winget install Adobe.Acrobat.Reader.64-bit $hdiaa
+
+winget upgrade --all $hdiaa
