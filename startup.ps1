@@ -17,7 +17,9 @@ Register-ScheduledTask SM_LoginTask -Trigger $stt -Action $sta -Principal $stp -
 
 for(;;) {
   if(Get-Command winget -ErrorAction SilentlyContinue) {   
+  
     break
+    
   } else {
     
     $URL = "https://api.github.com/repos/microsoft/winget-cli/releases/latest"
