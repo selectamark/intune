@@ -16,8 +16,10 @@ $stp = New-ScheduledTaskPrincipal -GroupId "BUILTIN\Administrators" -RunLevel Hi
 Register-ScheduledTask SM_LoginTask -Trigger $stt -Action $sta -Principal $stp -Force
 
 for(;;) {
-  if(Get-Command winget -ErrorAction SilentlyContinue) {
-  
+  if(Get-Command winget -ErrorAction SilentlyContinue) {   
+    break
+  } else {
+    
     $URL = "https://api.github.com/repos/microsoft/winget-cli/releases/latest"
     $URL = (Invoke-WebRequest -Uri $URL).Content | ConvertFrom-Json |
             Select-Object -ExpandProperty "assets" |
@@ -27,10 +29,8 @@ for(;;) {
     Invoke-WebRequest -Uri $URL -OutFile "Setup.msix" -UseBasicParsing
     Add-AppxPackage -Path "Setup.msix"
     Remove-Item "Setup.msix"
-    
-    break
-  } else {
-    sleep 15
+  
+    sleep 5
   }
 }
 
