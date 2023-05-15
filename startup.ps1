@@ -26,9 +26,9 @@ for(;;) {
             Where-Object "browser_download_url" -Match '.msixbundle' |
             Select-Object -ExpandProperty "browser_download_url"
 
-    Invoke-WebRequest -Uri $URL -OutFile "Setup.msix" -UseBasicParsing
-    Add-AppxPackage -Path "Setup.msix"
-    Remove-Item "Setup.msix"
+    Invoke-WebRequest -Uri $URL -OutFile "$DIR\Setup.msix" -UseBasicParsing
+    Add-AppxPackage -Path "$DIR\Setup.msix"
+    Remove-Item "$DIR\Setup.msix"
   
     sleep 5
   }
