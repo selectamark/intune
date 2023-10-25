@@ -1,3 +1,5 @@
+$DIR = "C:\ProgramData\Selectamark"
+
 function LogAction {
     param ($message)
     Add-Content -Path $DIR\provisioner.log -Value "[$(Get-Date -Format "yyyy-MM-dd HH:mm:ss")] - $message"
