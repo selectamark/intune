@@ -16,6 +16,6 @@ LogAction("Winget Path = $($WingetPath)")
 $WingetDir = Split-Path -Path $WingetPath -Parent
 Set-Location $WingetDir
 
-LogAction("Updating all WinGet Packages (2/2)")
+LogAction("Updating all WinGet Packages")
 .\winget.exe update --all -h
 
