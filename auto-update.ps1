@@ -17,5 +17,6 @@ $WingetDir = Split-Path -Path $WingetPath -Parent
 Set-Location $WingetDir
 
 LogAction("Updating all WinGet Packages")
-.\winget.exe update --all -h
+.\winget.exe update --all -h --accept-package-agreements --accept-source-agreements
+LogAction("Finished updating WinGet Packages")
 
