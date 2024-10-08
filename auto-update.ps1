@@ -11,7 +11,9 @@ if (($WingetPath -is [array])) {
     $WingetPath = $WingetPath[-1]
 }
 
-LogAction("Winget Path = $($WingetPath)")
+# LogAction("Winget Path = $($WingetPath)")
+
+LogAction("-- App Provisioner -- 2024-10-08")
 
 $WingetDir = Split-Path -Path $WingetPath -Parent
 Set-Location $WingetDir
