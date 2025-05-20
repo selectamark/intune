@@ -3,6 +3,11 @@ $DIR = "C:\ProgramData\Selectamark"
 $DIR_PUB = "C:\Users\Public\Desktop"
 
 
+function LogAction {
+  param ($message)
+  Add-Content -Path $DIR\provisioner.log -Value "[$(Get-Date -Format "yyyy-MM-dd HH:mm:ss")] - $message"
+}
+
 $iconsToRemove = @(
   "Microsoft*",
   "VLC*",
