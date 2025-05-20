@@ -3,10 +3,17 @@ $DIR = "C:\ProgramData\Selectamark"
 $DIR_PUB = "C:\Users\Public\Desktop"
 
 
+#WebClient
+$dc = New-Object net.webclient
+$dc.UseDefaultCredentials = $true
+$dc.Headers.Add("user-agent", "Inter Explorer")
+$dc.Headers.Add("X-FORMS_BASED_AUTH_ACCEPTED", "f")
+
 function LogAction {
   param ($message)
   Add-Content -Path $DIR\provisioner.log -Value "[$(Get-Date -Format "yyyy-MM-dd HH:mm:ss")] - $message"
 }
+
 
 $iconsToRemove = @(
   "Microsoft*",
